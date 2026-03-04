@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +39,7 @@
             color: #555;
         }
 
-        input{
+        input {
             width: 100%;
             padding: 4px 1px 4px 1px;
             margin-bottom: 15px;
@@ -56,9 +57,9 @@
         input[type="submit"]:hover {
             background-color: #333;
         }
-
     </style>
 </head>
+
 <body>
 
     <section>
@@ -81,4 +82,5 @@
     </section>
 
 </body>
+
 </html>
