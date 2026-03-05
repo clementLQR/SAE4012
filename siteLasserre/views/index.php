@@ -1,5 +1,5 @@
 <?php
-require(__DIR__ . '/../controllers/clientsController.php');
+require_once(__DIR__ . '/../controllers/clientsController.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     store($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel']);
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="email" id="email" name="email" required>
 
             <label for="tel">Tel:</label>
-            <input type="text" id="tel" name="tel" required>
+            <input type="tel" name="tel" pattern="^[0-9]{10}$" inputmode="numeric" placeholder="0612345678" title="Entrez exactement 10 chiffres (pas d'espaces ni de symboles)" required>
 
             <input type="submit" value="Valider">
         </form>
