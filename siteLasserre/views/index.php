@@ -1,3 +1,11 @@
+<?php
+require(__DIR__ . '/../controllers/clientsController.php');
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    store($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -64,11 +72,11 @@
 
     <section>
         <h1>CONNEXION / INSCRIPTION</h1>
-        <form action="" method="post">
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" required>
+        <form method="post">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required>
 
-            <label for="prenom">Prenom :</label>
+            <label for="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom" required>
 
             <label for="email">Email:</label>
