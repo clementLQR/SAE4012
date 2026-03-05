@@ -4,10 +4,10 @@ require('controllers/clientsController.php');
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Adapter le chemin si besoin :
-$base = '/SAE4012_VH/SAE4012/siteLasserre';
+$base = '';
 
 // ROUTE PRINCIPALE
-if ($uri === $base || $uri === $base . '/' || $uri === $base . '/index') {
+if ($uri === $base || $uri === $base . '/') {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -24,4 +24,23 @@ if ($uri === $base || $uri === $base . '/' || $uri === $base . '/index') {
 
 } else {
     echo "Page not found";
+}
+
+
+// Page affichage complet
+if ($uri === $base . '/afficher') {
+    showAll();
+    exit();
+}
+
+// Page formulaire de recherche
+if ($uri === $base . '/recherche') {
+    search();
+    exit();
+}
+
+// Page résultat de la recherche
+if ($uri === $base . '/recherche/resultat' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    searchResult();
+    exit();
 }
