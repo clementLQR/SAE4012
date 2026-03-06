@@ -74,13 +74,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <h1>CONNEXION / INSCRIPTION</h1>
         <form method="post">
             <label for="nom">Nom:</label>
-            <input type="text" id="nom" name="nom" required>
+            <input type="text" id="nom" name="nom" pattern="^[a-zA-ZÀ-ÿ\s\-']+$" required>
 
             <label for="prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom" required>
+            <input type="text" id="prenom" name="prenom" pattern="^[a-zA-ZÀ-ÿ\s\-']+$" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" required>
 
             <label for="tel">Tel:</label>
             <input type="tel" name="tel" pattern="^[0-9]{10}$" inputmode="numeric" placeholder="0612345678" title="Entrez exactement 10 chiffres (pas d'espaces ni de symboles)" required>
